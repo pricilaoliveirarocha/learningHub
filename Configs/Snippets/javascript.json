@@ -1,0 +1,104 @@
+{
+	"Imprimir no console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Exibir saída no console"
+	},
+	
+	"Declaração de função": {
+		"prefix": "func",
+		"body": [
+			"function ${1:nomeFuncao}(${2:parametros}) {",
+			"\t$3",
+			"\treturn $4;",
+			"}"
+		],
+		"description": "Criar uma declaração de função"
+	},
+
+	"Função arrow": {
+		"prefix": "arrow",
+		"body": [
+			"const ${1:nomeFuncao} = (${2:parametros}) => {",
+			"\t$3",
+			"};"
+		],
+		"description": "Criar uma arrow function"
+	},
+	
+	"Declaração if": {
+		"prefix": "if",
+		"body": [
+			"if (${1:condicao}) {",
+			"\t$2",
+			"}"
+		],
+		"description": "Criar uma declaração if"
+	},
+	"Loop for": {
+		"prefix": "for",
+		"body": [
+			"for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+			"\t$3",
+			"}"
+		],
+		"description": "Criar um loop for"
+	},
+	"Loop for of": {
+		"prefix": "forof",
+		"body": [
+			"for (const ${1:item} of ${2:array}) {",
+			"\t$3",
+			"}"
+		],
+		"description": "Criar um loop for...of"
+	},
+
+	"Try catch": {
+		"prefix": "try",
+		"body": [
+			"try {",
+			"\t$1",
+			"} catch (${2:erro}) {",
+			"\tconsole.error(${2:erro});",
+			"\t$3",
+			"}"
+		],
+		"description": "Criar um bloco try...catch"
+	},
+
+	"Função async": {
+		"prefix": "async",
+		"body": [
+			"async function ${1:nomeFuncao}(${2:parametros}) {",
+			"\ttry {",
+			"\t\t$3",
+			"\t} catch (erro) {",
+			"\t\tconsole.error(erro);",
+			"\t}",
+			"}"
+		],
+		"description": "Criar uma função async com try...catch"
+	},
+
+	"Promise": {
+		"prefix": "promise",
+		"body": [
+			"new Promise((resolve, reject) => {",
+			"\t$1",
+			"});"
+		],
+		"description": "Criar uma nova Promise"
+	},
+
+	"Importar módulo": {
+		"prefix": "import",
+		"body": [
+			"import ${1:modulo} from '${2:caminho}';"
+		],
+		"description": "Importar um módulo"
+	}
+}

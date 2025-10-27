@@ -1,0 +1,173 @@
+{
+    // =================== Editor & Formatting ===================
+    "workbench.sideBar.location": "right", // Barra de atividades ao lado direito
+    "editor.autoClosingQuotes": "always", // Fecha automaticamente aspas quando você digita
+    "editor.bracketPairColorization.enabled": true, // Habilita cores diferentes para pares de colchetes
+    "editor.cursorBlinking": "smooth", // Define animação suave para o cursor
+    "editor.defaultFormatter": null, // Nenhum formatter padrão global definido
+    "editor.fontFamily": "Fira Code", // Fonte do editor
+    "editor.fontLigatures": true, // Habilita ligaturas da fonte (ex: →, ≠, =>)
+    "editor.fontSize": 13, // Tamanho da fonte no editor
+    "editor.lineHeight": 1.7, // Leve espaçamento entre as linhas
+    "editor.formatOnPaste": false, // Não formata automaticamente ao colar
+    "editor.formatOnSave": false, // Não formata automaticamente ao salvar
+    "editor.guides.bracketPairs": "active", // Mostra linhas guia apenas no par de colchetes ativo
+    "editor.guides.bracketPairsHorizontal": true, // Mostra linhas horizontais conectando colchetes
+    "editor.guides.highlightActiveBracketPair": true, // Destaca o par de colchetes ativo
+    "editor.insertSpaces": true, // Usa espaços ao invés de tabulação
+    "editor.stickyScroll.enabled": false, // Não mantém cabeçalhos visíveis ao rolar
+    "editor.tabSize": 4, // Quantidade de espaços por tab
+    "editor.wordWrap": "on", // Quebra linha automaticamente quando excede a largura do editor
+    "editor.minimap.enabled": false, // Desativa minimap
+    // =================== Emmet ===================
+    "emmet.includeLanguages": {
+        "html": "php", // Permite usar Emmet em arquivos PHP
+        "javascript": "javascriptreact" // Permite usar Emmet em JSX/React
+    },
+    "emmet.showSuggestionsAsSnippets": true, // Mostra snippets do Emmet nas sugestões
+
+    // =================== Explorer ===================
+    "explorer.confirmDelete": false, // Não pede confirmação ao deletar arquivos
+    "explorer.confirmDragAndDrop": false, // Não pede confirmação ao mover arquivos
+    "explorer.openEditors.visible": 0, // Oculta a seção de arquivos abertos no topo do Explorer
+
+    // =================== Extensions ===================
+    "codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 5px 2px", // Sombra da extensão CodeSnap
+    "codesnap.transparentBackground": true, // Fundo transparente no CodeSnap
+    "liveServer.settings.ChromeDebuggingAttachment": false, // Desativa anexos de debug no Chrome
+    "liveServer.settings.donotShowInfoMsg": true, // Não mostra mensagem de info do Live Server
+    "liveServer.settings.donotVerifyTags": true, // Desativa verificação de tags HTML pelo Live Server
+    
+    // =================== Files & AutoSave ===================
+    "files.autoSave": "afterDelay", // Salva arquivos automaticamente após delay
+    "files.autoSaveDelay": 800, // Delay de 800ms para autoSave
+
+    // =================== Git ===================
+    "git.autofetch": true, // Busca atualizações automaticamente
+    "git.confirmSync": false, // Não pede confirmação ao sincronizar
+    "git.enableSmartCommit": true, // Permite commit automático sem abrir menu
+    "git.openRepositoryInParentFolders": "always", // Sempre abre repositórios em pastas parent
+
+    // =================== Language Specific ===================
+    "[javascript]": {
+        "editor.formatOnSave": false, // Não formata JS ao salvar
+        "editor.defaultFormatter": "esbenp.prettier-vscode" // Prettier como formatter do JS
+    },
+    "[php]": {
+        "editor.tabSize": 4, // TabSize para PHP
+        "editor.insertSpaces": true, // Usa espaços em PHP
+        "editor.formatOnSave": false, // Não formata PHP ao salvar
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" // Formatter PHP (Intelephense)
+    },
+    "intelephense.format.braces": "k&r", // Mantém { na mesma linha ao formatar PHP
+
+    "[snippets]": {
+        "editor.defaultFormatter": "vscode.json-language-features" // Formatter para snippets
+    },
+
+    // =================== PHP ===================
+    "php-cs-fixer.autoFixByBracket": false, // Não executa PHP-CS-Fixer automaticamente
+    "php.validate.enable": false, // Desativa validação nativa de PHP do VS Code
+
+    // =================== Prettier Configuration ===================
+    "prettier.bracketSameLine": true, // Mantém brackets na mesma linha
+    "prettier.bracketSpacing": true, // Espaços dentro de objetos ({ key: value })
+    "prettier.enable": true, // Ativa Prettier
+    "prettier.printWidth": 200, // Largura máxima da linha
+    "prettier.semi": false, // Sem ponto e vírgula
+    "prettier.singleAttributePerLine": true, // JSX: 1 atributo por linha
+    "prettier.singleQuote": true, // Usa aspas simples
+    "prettier.tabWidth": 4, // TabWidth do Prettier
+
+    // =================== UI & Workbench ===================
+    "window.commandCenter": true, // Tema de cores do VS Code
+    "workbench.iconTheme": "material-icon-theme", // Tema de ícones
+    "workbench.startupEditor": "none", // Não abre nenhum editor ao iniciar
+    "workbench.colorCustomizations": {
+        "editor.foldBackground": "#00000000", // Fundo transparente para código dobrado
+        "editorFoldingRangeForeground": "#00000000" // Remove linhas de folding
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#8b8b8b6c" // Altera a cor dos comentários
+    },
+
+    // ======================= Terminal ========================
+    "terminal.integrated.fontFamily": "Fira Code", // Fonte do terminal
+    "terminal.integrated.fontWeight": "normal", // Peso da fonte do terminal
+    "terminal.integrated.lineHeight": 1, // Altura da linha do terminal
+    // "terminal.integrated.profiles.windows": { // Configuração WSL
+    //     "WSL": {
+    //     "path": "wsl.exe",
+    //     "args": ["-e", "zsh"]
+    // }
+    // },
+
+    "terminal.integrated.profiles.windows": { // Configuração Git Bash
+        "Git Bash": {
+            "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "args": ["--login", "-i"]
+        }
+    },
+
+    "terminal.integrated.defaultProfile.windows": "Git Bash", // Terminal padrão ("Git Bash", "WSL")
+    
+
+    // =================== Others ===================
+    "code-runner.clearPreviousOutput": true, // Limpa saída antiga ao rodar código
+    "debug.console.closeOnEnd": true, // Fecha console de debug automaticamente
+    "typescript.suggest.autoImports": true, // Sugere imports automáticos em TS
+    "better-comments.highlightPlainText": true, // Habilita destaque de comentários simples
+    "intelephense.diagnostics.undefinedSymbols": false, // Ignora símbolos indefinidos
+    "intelephense.diagnostics.undefinedVariables": false, // Ignora variáveis indefinidas
+    "intelephense.codeLens.usages.enable": true, // Ativa CodeLens de usos
+    "intelephense.codeLens.references.enable": true, // Ativa CodeLens de referências
+    "intelephense.codeLens.parent.enable": true, // Ativa CodeLens de parent
+    "intelephense.codeLens.overrides.enable": true, // Ativa CodeLens de overrides
+    "intelephense.codeLens.implementations.enable": true, // Ativa CodeLens de implementações
+    "intelephense.diagnostics.typeErrors": false, // Ignora erros de tipo
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode" // Formatter JSON
+    },
+    "github.copilot.nextEditSuggestions.enabled": true, // Habilita sugestões de edição do Copilot
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode" // Formatter JSONC
+    },
+    "diffEditor.ignoreTrimWhitespace": true, // Ignora espaços ao comparar diffs
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "javascript": true,
+        "php": true
+    },
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "vscode-pets.theme": "winter",
+    "vscode-pets.petSize": "small",
+    
+    // =================== Novo Arquivo Ext ===================
+    "newFile.defaultBaseFileName": "newFile",
+    "newFile.relativeTo": "root", // "root" or "project"
+    "newFile.defaultFileExtension": ".js",
+    "newFile.rootDirectory": "~",
+    "newFile.showPathRelativeTo": "root", // "project" or "none"
+    "newFile.expandBraces": false,
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+    "terminal.external.windowsExec": "C:\\Windows\\system32\\wsl.exe -e zsh",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.editor.enablePreview": false,
+    "window.newWindowProfile": "Default",
+    "workbench.colorTheme": "One Monokai" // setting to true will allow for creating multiple files such as `new-folder/{file1,file2}.js`
+}

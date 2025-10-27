@@ -1,0 +1,91 @@
+# ================== VARIÁVEIS ======================= #
+export NICKNAME="Pri"
+
+# ===================== ESTILO ======================= #
+# Prompt colorido com branch Git
+PS1='\[\e[32m\]\u\[\e[37m\] at \[\e[33m\]\h\[\e[37m\] \[\e[34m\]\w\[\e[0m\]$(__git_ps1 " \[\e[33m\][%s]")\[\e[0m\] \$ '
+
+# ===================== ALIAS ======================== #
+alias gogo='source ~/.bashrc'                 # reload no .bashrc
+alias ll='ls -alF'                            # lista detalhada
+alias ls='ls -F --color=auto --show-control-chars'
+alias e='exit'                                # sair do shell rápido
+alias c='clear'                               # limpar terminal
+
+# Git
+alias gs='git status'
+alias gp='git push'
+alias gpl='git pull'
+alias gf='git fetch'
+alias gfp='git fetch --prune'
+alias gfep='git fetch && git pull'
+
+# Navegação
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# Utilidades
+alias vsc='code .'
+alias hist='history | less'
+alias grep='grep --color=auto'
+
+# ===================== FUNÇÕES ====================== #
+# git add de arquivos específicos
+ga() { git add "$@"; }
+
+# git commit com mensagem
+gc() { git commit -m "$*"; }
+
+# git add de todos os arquivos + commit com mensagem
+gca() {
+  git add .
+  git commit -m "$1"
+}
+
+# git checkout
+gco() { git checkout "$1"; }
+
+# git checkout -b
+gcb() { git checkout -b "$1"; }
+
+# ================== BOAS-VINDAS ====================== #
+# ASCII + Saudação
+echo -e "\e[33m
+  ____       _        
+ |  _ \ _ __(_| 
+ | |_) | '__| | 
+ |  __/| |  | | 
+ |_|   |_|  |_| 
+\e[0m"
+
+# 🎭 Emoji do dia da semana
+DAY=$(date '+%A')
+case "$DAY" in
+  Monday)    EMOJI="🌞" ;;
+  Tuesday)   EMOJI="💪" ;;
+  Wednesday) EMOJI="🐪" ;;
+  Thursday)  EMOJI="🔥" ;;
+  Friday)    EMOJI="🎉" ;;
+  Saturday)  EMOJI="😎" ;;
+  Sunday)    EMOJI="🌴" ;;
+  *)         EMOJI="✨" ;;
+esac
+
+# 🖥️ Detectar sistema
+SYSINFO=$(uname -sr)
+if [[ "$SYSINFO" == MINGW* ]]; then
+  SYSTEM="Windows (Git Bash)"
+else
+  SYSTEM="Linux"
+fi
+
+# Mensagens de boas-vindas
+echo -e "\e[36mHello, $NICKNAME! Today is $(date '+%A, %d de %B de %Y') $EMOJI\e[0m"
+echo -e "\e[35mSystem: $SYSTEM\e[0m"
+echo -e "\e[34mCurrent Time: $(date '+%H:%M:%S')\e[0m"
+echo -e "\e[32mHave a great day! 🚀\e[0m\n"
+
+# ================== BASH COMPLETION ================== #
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi

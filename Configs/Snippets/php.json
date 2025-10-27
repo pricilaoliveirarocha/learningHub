@@ -1,0 +1,90 @@
+{
+
+	"Echo pre, print_r e die()": {
+		"prefix": "phppd",
+		"body": [
+			"echo \"<pre>\";",
+			"print_r($$1);",
+			"echo \"</pre>\";",
+			"die();"
+		],
+		"description": "Exibe uma variável formatada dentro de <pre> e die();"
+	},
+
+	"Documentação de função": {
+		"prefix": "phpdocthis",
+		"body": [
+			"/**",
+			" * $1",
+			" * @since ${CURRENT_DATE}/${CURRENT_MONTH}/${CURRENT_YEAR}",
+			" * @author Pricila Oliveira",
+			" * @updated by ",
+			" * @param ${5:int} $${6:id} ${7:Descrição do ID}",
+			" * @return ${11:null} ${12:Retorno}",
+			" * @throws ${13:Exception} ${14:Exceção}",
+			" */"
+		],
+		"description": "Cria um bloco PHPDoc para funções com documentação mais completa"
+	},
+
+	"Documentação de função mais simples": {
+		"prefix": "phpdocsimple",
+		"body": [
+			"/**",
+			" * $1",
+			" * @since ${CURRENT_DATE}/${CURRENT_MONTH}/${CURRENT_YEAR}",
+			" * @author Pricila Oliveira",
+			" * @updated by Pricila Oliveira",
+			" * @return void",
+			" */"
+		],
+		"description": "Cria um bloco de documentação básico para funções"
+	},
+
+	"Nova função simples com try catch": {
+		"prefix": "ftrycatch",
+		"body": [
+			"public function ${1:nomeFuncao}($${2:parametro}) {",
+			"    try {",
+			"    } catch (Exception \\$e) {",
+			"        throw new Exception(\"Erro: \" . \\$e->getMessage());",
+			"    }",
+			"}"
+		],
+		"description": "Cria uma função PHP simples com bloco try/catch"
+	},
+
+    "PDO Connect": {
+        "prefix": "pdoconnect",
+        "body": [
+            "try {",
+            "    \\$pdo = new PDO(\"mysql:host=localhost;dbname=${1:mydatabase}\", \"${2:username}\", \"${3:password}\");",
+            "    \\$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);",
+            "} catch (PDOException \\$e) {",
+            "    die(\"Error: \" . \\$e->getMessage());",
+            "}"
+        ],
+        "description": "Conexão PDO com try/catch"
+    },
+
+    "PDO Select": {
+        "prefix": "pdoselect",
+        "body": [
+            "\\$stmt = \\$this->db->prepare(\"SELECT * FROM ${1:users} WHERE id = :id\");",
+            "\\$stmt->bindParam(':id', $${2:userId});",
+            "\\$stmt->execute();",
+            "\\$var = \\$stmt->fetch(PDO::FETCH_ASSOC);"
+        ],
+        "description": "Select simples com PDO"
+    },
+
+    "Just insert data": {
+        "prefix": "pdoinsert",
+        "body": [
+            "\\$stmt = \\$db->prepare(\"INSERT INTO ${1:tabela} (${2:coluna}) VALUES (:${2:coluna})\");",
+            "\\$stmt->bindParam(':${2:coluna}', $${2:coluna});",
+            "\\$stmt->execute();"
+        ],
+        "description": "Snippet para insert simples com PDO e bindparam"
+    }
+}
