@@ -13,6 +13,7 @@ alias gs='git status'                       # git status
 alias gp='git push'                         # git push simples
 alias gpl='git pull'
 alias gf='git fetch'                        # git fetch
+alias gb='git branch'                       # git branch
 alias gfep='git fetch & git pull' 
 alias gca='git commit --amend'              # git commit --amend
 alias gfp='git fetch --prune'                   # git fetch --prune
@@ -21,10 +22,25 @@ alias c='clear'                             # limpar terminal
 alias h='history'                         # histórico de comandos
 alias gck='git checkout'                     # git checkout
 alias gcb='git checkout -b'                 # git checkout -b
+alias gbd='git branch -d'                    # git branch -d
+alias ..='cd ..'                            # subir um diretório
+alias ...='cd ../..'                        # subir dois diretórios
+alias ....='cd ../../..'                    # subir três diretórios
+alias mkdir='mkdir -p'                      # criar diretórios recursivamente
+alias rm='rm -i'                            # remoção interativa
+alias cp='cp -i'                            # cópia interativa
+alias mv='mv -i'                            # movimentação interativa
+alias ping='ping -c 5'                      # ping com 5 pacotes
+alias update='sudo apt update && sudo apt upgrade -y'  # atualizar sistema (Debian/Ubuntu)
+alias ports='netstat -tulanp'               # listar portas em uso
+alias myip='curl ifconfig.me'               # mostrar IP público
 
+# ==================== Funções ======================== #
 
 # Alias personalizado para diferenciação de bancos
-alias dif='function _diffsql(){ ./diff5.2.sh "$1" "$2" "diferencasEncontradas.sql"; }; _dif'
+dif() {
+  ./diff5.2.sh "$1" "$2" "diferencasEncontradas.sql"
+}
 
 # ================== BOAS-VINDAS ====================== #
 # ASCII + Saudação com data
